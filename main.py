@@ -25,7 +25,16 @@ def atualiza_timer():
             parar()
         tempo_label.config(text=f'{tempo_passado:.2f}')
         tempo_label.after(50, atualiza_timer)
-        
+    
+# Reinicia Timer ------------------------------
+def reiniciar():
+    global tempo_restante, rodando
+    tempo_restante = 0
+    rodando = False
+    tempo_label.config(text=f'{tempo_restante:.2f}')
+    sleep(0.5)
+    iniciar()
+
 # Criando a janela ----------------------------
 janela = Tk()
 janela.title('Temporizador')
@@ -48,6 +57,8 @@ botao_iniciar = Button(janela, text='Iniciar', height=1, command=iniciar, relief
 botao_iniciar.place(x=10, y=10)
 botao_parar = Button(janela, text='Parar', height=1, command=parar, relief='groove', bg='black', fg='white')
 botao_parar.place(x=260, y=10)
+botao_reiniciar = Button(janela, text='Reiniciar', command=reiniciar, relief='groove', bg='black', fg='white')
+botao_reiniciar.place(x=260, y=369)
 
 # Loop da janela -----------------------------
 rodando = False
