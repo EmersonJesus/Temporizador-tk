@@ -30,6 +30,8 @@ def atualiza_timer():
 janela = Tk()
 janela.title('Temporizador')
 janela.geometry('350x400')
+janela.resizable(width=False, height=False)
+
 
 # Configurando fundo --------------------------
 imagem = Image.open('temporizador.jpg')
