@@ -20,6 +20,9 @@ def parar():
 def atualiza_timer():
     if rodando:
         tempo_passado = time() - iniciar_timer
+        minuto = int(tempo_passado / 60)
+        if minuto >= 1:
+            parar()
         tempo_label.config(text=f'{tempo_passado:.2f}')
         tempo_label.after(50, atualiza_timer)
         
@@ -35,12 +38,12 @@ fundo = Label(janela, image=fundo_img)
 fundo.place(x=0, y=0)
 
 # Criando o label que mostra o tempo ----------
-tempo_label = Label(janela, text='0.00', font='Helvetica 48')
+tempo_label = Label(janela, text='0.00', font='Helvetica 48', bg='white')
 tempo_label.place(x=110, y=190)
 # Criando botões ------------------------------
-botao_iniciar = Button(janela, text='Iniciar', height=1, command=iniciar)
+botao_iniciar = Button(janela, text='Iniciar', height=1, command=iniciar, relief='groove', bg='black', fg='white')
 botao_iniciar.place(x=10, y=10)
-botao_parar = Button(janela, text='Parar', height=1, command=parar)
+botao_parar = Button(janela, text='Parar', height=1, command=parar, relief='groove', bg='black', fg='white')
 botao_parar.place(x=260, y=10)
 
 rodando = False
