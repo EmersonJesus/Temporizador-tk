@@ -24,3 +24,12 @@ def atualiza_timer():
         tempo_label.after(50, atualiza_timer)
         
 # Criando a janela ----------------------------
+janela = Tk()
+janela.title('Temporizador')
+janela.geometry('350x400')
+
+# Configurando fundo --------------------------
+imagem = Image.open('temporizador.jpg')
+fundo_img = ImageTk.PhotoImage(image=imagem)
+fundo = Label(janela, image=fundo_img)
+fundo.place(x=0, y=0)
