@@ -11,7 +11,7 @@ Este é um aplicativo de temporizador simples desenvolvido em Python usando as b
 
 ## Capturas de Tela
 
-![Captura de Tela 1](screenshot.png)
+![Captura de Tela 1](https://i.imgur.com/Dn3zxL3.png)
 
 ## Pré-requisitos
 
